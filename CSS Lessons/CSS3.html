@@ -1,0 +1,65 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3</title>
+    <link rel="stylesheet" href="styles/css3.css">
+    <!-- since this comes after, any styles in morestyles would replace css3 -->
+    <!-- css3 cascades into morestyles -->
+    <link rel="stylesheet" href="styles/css3-morestyles.css">
+</head>
+<body>
+    <nav>
+        <label for="search">Search</label>
+        <!-- id can be provided to any element to provide a "hook" for CSS -->
+            <!-- this is to single out a single element -->
+            <!-- NOTE: id should only be used once per page -->
+                <!-- since it is an unique identifier, singling out one thing -->
+                <!-- that being said, don't over use them -->
+        <input type="text" placeholder="search" id="search" name="q">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="password">
+        <button>Log In</button>
+        <!-- id should not have spaces and as short as possible -->
+        <!-- NOTE: since this button has an id, the id selector "wins the battle" in CSS -->
+        <button id="signup">Sign Up</button>
+    </nav>
+    <main>
+        <h1>Popular Posts</h1>
+        <section class="post">
+            <span class="item">Posted by <a href="#213adas">/u/not_funny</a></span>
+            <h2>Lol look at this hilarious meme <span class="tag">funny</span></h2>
+            <button>+Vote</button>
+        </section>
+        <hr>
+        <section class="post">
+            <span class="item">Posted by<a href="#345adas">/u/gooner4lyfe</a></span>
+            <h2>Happy birthday to the strongest defender/bodyguard in the Prem! <span class="tag">gunners</span> </h2>
+            <!-- this p will break the adjacent selector -->
+            <p></p>
+            <button>+Vote</button>
+        </section> 
+        <hr>
+        <section class="post">
+            <span class="item">Posted by <a href="">/u/dogfan</a></span>
+            <h2>This Corgi got some good stuff form the vet. <span class="tag">dogs</span></h2>
+            <button>+Vote</button>
+        </section>
+    </main>
+    <footer>
+        <ul>
+            <li>
+                <a href="">1</a>
+            </li>
+            <li>
+                <a href="">2</a>
+            </li>
+            <li>
+                <a href="">3</a>
+            </li>
+        </ul>
+        <a href="/swim">Swimming!</a>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,67 @@
+/* text-align is used to set the horizontal alignment on an element */
+    /* not where it goes on the page, but on within an element */
+h1{
+    /* by default, text-align to the left */
+    text-align: center;
+
+    /* Default font depends on broswer */
+
+    /* Font weight controls the boldness or lightness of the text of an element  */
+        /* uses keywords like normal, bold, lighter, bolder, etc */
+    /* or can use numbers */
+        /* from 100 - 900 */
+        /* 400 is normal, 700 is bold */
+    /* NOTE: not all fonts are able to use all font weights */
+        /* in case it doesn't the browser will pick the closest one available */
+    font-weight: 400; /* <-- aka, normal; h1 is usually bolded  */
+
+    /* text-decoration controls the decorative lives on text */
+        /* ie - underline, overline, line through  */
+    /* color, thickness, and other styles of line can be set as well*/
+    text-decoration: underline orange dotted;
+
+    /* font size is used to change the size of fonts to a specific size */
+        /* a lot of options and values for sizes */
+            /* named values */
+                /* xx-small, x-small, small, medium, large, x-large, xx-large,xxx-large */
+            /* Relative */
+                /* em, rem, vh, vw, %, etc */
+            /* Absolute */
+                /* px, pt, cm, in, mm */
+
+    /* px - pxiel
+        most commonely used absolute units 
+            meaning that it doesn't depend on anything else (other elements, parent's font size, browser size, etc) */
+    /* NOTE: 1px is not guaranteed to be exactly 1 pixel of display or screen */
+        /* not recommended for responsive websites */
+    font-size: 100px;
+
+    /* Font family used to change font of text of an element */
+        /* changing fonts really depends on the fonts that are built into the browser/system */
+        /* will need to include or install separate fonts */
+        /* https://www.cssfontstack.com/ */
+    /* Common to see font stacks */
+        /* a list of fonts that would like to be used in order */
+    font-family: 'lucida Grande', 'Segoe UI'; /* example of stack */
+    /* can also set to fall back on a generic font family */
+        /* which will pick any font from that sepcific family */
+}
+
+a{
+    /* Text-decoration is pretty useful in removing lines that exist by default */
+    text-decoration: none;
+}
+
+p{
+    /* line-height sets the height of a line of text */
+        /* "normal" is default */
+    line-height: 1.5;   /* <-- will take font size of element and multiply by 1.5 */
+
+    /* letter spacing is used to control the spacing between letters in text */
+        /* "normal" is default */
+    letter-spacing: 3px;
+}
+
+h2{
+
+}

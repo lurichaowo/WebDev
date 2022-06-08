@@ -1,0 +1,190 @@
+/* coolors.co */
+
+/* CSS = Cascading Style Sheet */
+/* the order of the stuff matters */
+/* start from the top to the bottom or the next style sheet */
+    /* ie - 
+        h1{ although this would be applied first
+            color: red; 
+        }
+        h1{ since this is applied after, it is what shows up on the screen
+            color: purple;
+        } */
+
+/* Specificity is when browser decides which rule
+    apply when multiple rules apply to same element */
+    /* ie - 
+        .post button:hover{ some property } <-- this one "wins" bc it is more specific
+        button:hover{ some property } */
+        /* ie - 
+        p{ some property }
+        section p{ some property } <--- this one will "win" */
+    /* General rule of thumb
+        id > 
+        class > 
+        element */
+    /* how to calculate 
+        _ _ _
+        id count would take 100s place
+        class, attribute, psuedo-class count will take 10s place
+        element and psuedo-element selector count will take 1s place 
+        OR just use specificty.keegan.st */
+    /* remember, this is only when properties of selectors are conflicting, 
+        if there is no conflict, then it would follow normal cascading */
+    /* NOTE: inline styles are actually more sepcific than id selectors 
+        but it is not recommeneded to use them to begin with. */
+    /* NOTE: !important keyword can be used 
+        ie - color: firebrick !important;
+        but not recommended as well, bc it is the SINGLE most important thing
+        will overwrite EVERYTHING that conflicts with it */
+
+/* CSS Dev tools in browser */
+        /* hovering and clicking element will highlight it */
+        /* CSS properties of elements will show what is currently applied  */
+            /* it will also show what was overridden */
+        /* Can preview it by directly writing CSS without changing actual code */
+            /* Color picker also exists */
+        /* can change state of element to preview as well */
+
+/* Inheritance */
+/* Child elements will inherit certain properties of its parents */
+/* ie - body { color: red } <-- all elements will have red text unless specified to be different */
+/* but not everything will inherit, if that is the case,
+ie - button { color: inherit; } <--- this will make it inherit the nearest parent's property */
+/* NOTE: not all properties are inheritable (can check on MDN) */
+
+/* universal selector - selects everything in the document */
+    /* not common, pretty inefficient, and better ways exist */
+* {
+    color: pink;
+
+}
+
+body{
+    background-color: #f1faee;
+}
+
+/* element selector - selects everything of a given type of element */
+button{
+    font-size: 30px;
+    background-color: #a8dadc;
+}
+
+/* selector list - combine multiple selectors into a list */
+/* h1 AND h2 */
+h1, h2{
+    color: #1d3557;
+}
+
+/* this is the id selector - references to specific element with id */
+#signup{
+    background-color: #1d3557;
+    color: #f1faee
+}
+
+/* this is a class selector - references to all elements with the class */
+    /* good bc there are groups of things that appear similarly */
+.tag{
+    background-color: #e63946;
+    color: #f1faee;
+    font-size: 16px;
+}
+
+/* this is a descendant selector/
+    /* is the form of: */
+        /* a b{
+            property: value;
+        } */
+    /* where b is a child of a */
+    /* good for when need to select a specfic set of nested elements */
+/* span a{      <-- this is still kinda generic
+    color: #457b9d; 
+} */
+    /* this is more specific */
+.item a{
+    color: #457b9d; 
+}
+
+/* "layers" can be skipped in using this method as well */
+footer a{
+    color: red;
+}
+
+/* adjacent or combinator selector */
+/* the element that immediately follows the first element listed */
+/* elements aren't nested to each other in anyway */
+h2 + button{
+    background-color: magenta;
+}
+
+/* direct child selector */
+/* element that is direct descendent of another element; not within the "layers" */
+footer > a {
+    font-size: 20px;
+    color: burlywood;
+}
+
+/* attribute selector */
+/* allows us to select elements based on some particular attribute */
+/* commonly used with input elements  */
+    /* since each of them can have darastically different ways of inputs and appearances */
+input[type="password"]{
+    color: green;
+}
+/* but it is not just limited to input or id, since class is also can attribute */
+/* 
+section[class="post"]{  <--- this is pretty awkward tho (for class or id)
+    background-color: grey;
+} 
+
+a[href*="example"]{     <--- this means contains "example"
+    some property
+}
+
+a[href$="example"]{     <--- this means ending in "example"
+    same property
+}
+*/
+/* better to do class or id tho */
+section.post{
+    background-color: grey;
+}
+
+/* pseudo classes */
+/* modifiers/keywords added to a selector 
+    that specifies a particular state of the element */
+        /* ie - elements that have been hovered over or checked */
+        /* ie - every X amount of buttons */
+        /* all start with a button - signafies that psuedo class is used */
+a:hover{     /* <--- when anchor tags are hovered over */
+    color: orange;
+}
+
+.post button:hover{     /* <--- hover over a button inside of a post */
+    background-color: #e63946;
+    color: #f1faee;
+}
+
+/* To select every other element (or n number of elements) */
+.post:nth-of-type(2n){ /* the 2 n can also just be 2 or some other equation */
+    background-color: red;
+}
+
+/* pseudo elements */
+/* easily confused with pseudo, but doesn't really matter terminology wise */
+/* keywords added to selectors so you can style particular parts of a selected element */
+    /* ie - first letter or first line */
+/* technically should use :: but most browsers dont care can also use : */
+h2::first-letter{
+    font-size: 50px;
+    color: indigo;
+}
+
+p::first-line{
+    color: greenyellow;
+}
+
+/* this changes the highlight color of all H2s */
+h2::selection{
+    color: orange;
+}

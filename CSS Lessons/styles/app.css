@@ -1,0 +1,24 @@
+/* this is the general format for css:
+selector{               <--- the selector is the element being selected
+    property: value;    <--- this is styling property you want to give them
+} 
+*/
+
+/* Example 1 - basic */
+h1{
+    /* This sets the text color to purple */
+    color: purple; 
+}
+
+/* Example 2 - more properties */
+img{
+    /* This sets the width and height to 100px by 200px */
+    width: 100px;
+    height: 20px;
+}
+
+/* Example 3 - fancier, more specific selctors */
+input[type="text"]:nth-of-type(2n){
+    /* this makes every other text input will get a red border */
+    border: 2px solid red;
+}

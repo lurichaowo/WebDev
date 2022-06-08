@@ -1,0 +1,49 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Basics</title>
+    <!-- Using External Style Sheets -->
+    <!-- Write styles onto separate .css file and include it using <link> in Head of document  -->
+    <!-- Recommended way -->
+    <link rel="stylesheet" href="styles/app.css">
+
+    <!-- Using the <style></style> element - NOT GOOD -->
+    <!-- Write syles for a specific document -->
+    <!-- But makes it so you can't share it between documents/pages -->
+    <style>
+        h3{
+            color:palevioletred;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>CSS Basics</h1>
+
+    <!-- What is CSS? -->
+        <!-- A language is a language for describing how documents are presneted visually - how they are arranged and styled -->
+    <!-- CSS stands for Cascading Style Sheets -->
+
+    <!-- Inline Styles - BAD -->
+    <!-- Styling straight into html via attributes in HTML -->
+    <!-- We explored this before, but it not a good idea 99.95% of the time (pulled that # out of my arse tbh) -->
+    <!-- Since each element is individually styled, it will be very tedious when a style change comes along -->
+    <!-- and can't be shared btwn documents -->
+    <h2 style="color: purple">This is for inline style</h2>
+
+    <h3>This is for all Style element styles</h3>
+
+    <div>
+        <input type="text" placeholder="hi">
+        <input type="text" placeholder="hi2">
+        <input type="text" placeholder="hi3">
+        <input type="text" placeholder="hi4">
+    </div>
+
+
+</body>
+
+</html>

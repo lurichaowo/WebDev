@@ -1,0 +1,48 @@
+section{
+    background-color: #6d6875;
+    width: 800px;
+    height: 800px;
+}
+
+div{
+    background-color: blanchedalmond;
+    width: 50%;
+    height: 50%;
+}
+
+h1{
+    font-size: 40px;
+    line-height: 200%; 
+        /* so it would be 200% x 40px = 80px */
+    background-color: beige;
+}
+
+p{
+    font-size: 20px;
+}
+
+.em_ex1{
+    font-size: 1em;
+    /* will be font size 20x1 = 20 */
+    margin: 1em;
+    padding: 1em;
+}
+
+.em_ex2{
+    font-size: 2em; 
+    /* will be fontsize 20x2 = 40 */
+    margin: 5em;
+    padding: 5em;
+}
+
+button{
+    /* static values like these will make it not scale well */
+    font-size: 100px;
+    padding: 0 30px;
+    border-radius: 15px;
+
+    /* instead using em makes it relative */
+    padding: 0 1em; /*fontsize x 1*/
+    border-radius: 0.5em; /* fontsize x 0.5 */
+    /* the general shape will be maintained */
+}

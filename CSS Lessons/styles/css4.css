@@ -1,0 +1,76 @@
+/* by default body element has some margin automatically 
+so some devs would do this so it wouldn't happen */
+/* to get rid of "mystery space" */
+body{
+    margin: 0;
+}
+
+.width-height{
+    width: 50px;
+    height: 200px;
+    /* will control content box height and width */
+    /* unless box-sizing: border-box; is used so it will govern all the 
+    entire width and height minus border and padding  */
+    background-color: lightblue;
+}
+
+.border-example1{
+    border-width: 10px;
+    border-color: black;
+    border-style: solid;
+    background-color: #15AB7A;
+    width: 100px;
+    height: 200px;
+    /* width of the element is going from border to border */
+        /* rather than content edge to content edge */
+    box-sizing: border-box;
+}
+
+.border-example2{
+    background-color: #15ABCC;
+    width: 100px;
+    height: 100px;
+    /* border shorthands */
+    /* width | style | color */
+    border: dashed #ffcdb2 ;
+    border-width: 3px 5px 7px 9px;
+    border-left-style: solid;
+}
+
+.border-example3{
+    /* will this the most often */
+    border: 5px solid grey ;
+    background-color: #15ABEE;
+    /* this use this to update since cascading   */
+    border-left-style: dotted;
+    /* can use px but better to use percentages */
+        /* border radius is dependent on the percentage of the hieght and width */
+    border-radius: 50%; /* <---- makes a circle */
+    /* can set each corner individually or even pairs of corners */
+}
+
+.padding-example1{
+    /* can do padding-left, etc 
+        or can just use short hand */
+    padding-left: 30px;
+}
+
+.pad-me{
+    height: 50px;
+    width: 100px;
+    /* all four sides */
+    padding: 20px;
+    /* vertical | horizontal */
+    /* top | horizontal | bottom */
+    /* top | right | bottom | left */
+}
+
+.margin-example1{
+    margin: 20px;
+    /* the short hand for margin is the same as for padding */
+    margin-top: 50px;
+}
+
+.test-span{
+    margin-left: 50px;
+}

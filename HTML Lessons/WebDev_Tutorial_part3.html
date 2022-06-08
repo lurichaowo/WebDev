@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Table Demo</h1>
+    <!-- tables -->
+    <!-- good way to display data in a tabular format -->
+    <!-- back in the day, tables were the way to structure website contents -->
+    <!-- uses rows and cols -->
+    <!-- table sections -->
+        <!-- table element <table></table>-->
+            <!-- td = single cell in a table that contains data  -->
+            <!-- tr = row of table -->
+            <!-- th = defines header of a table row -->
+                <!-- needs to live inside its own tr -->
+
+            <!-- these three are more semantic -->
+            <!-- thead = used to separate header of a table into it's own section -->
+            <!-- tbody = used to separate data of table from the header and footer -->
+            <!-- tfoot = used to separate section of table into its own footer -->
+
+            <!-- colspan - attribute -->
+                <!-- for columns that span multiple rows -->
+            <!-- rowspan - attribute -->
+                <!-- for rows that span multiple columns -->
+    <table>
+        <thead>
+            <tr>
+                <th rowspan="2">Title</th>
+                <th rowspan="2">Release Date</th>
+                <th colspan="3">Credited as</th>
+                <th rowspan="2">Type of Film</th>
+            </tr>
+            <tr>
+                <th>Director</th>
+                <th>Writer</th>
+                <th>Producer</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>The World be Enclosed
+                    (囲まれた世界 Kakomareta Sekai)</td>
+                <td>1998</td>
+                <td>Yes</td>
+                <td>No</td>
+                <td>No</td>
+                <td>Short Film</td>
+            </tr>
+            
+            <!-- can add extra td to make empty column so it lines up  -->
+            <tr>
+                <td>Other Worlds
+                    (遠い世界 Tōi Sekai)</td>
+                <td>1998</td>
+                <td>Yes</td>
+                <td>No</td>
+                <td>No</td>
+                <td>Short Film</td>
+            </tr>
+        </tbody>
+        <tfoot></tfoot>
+    </table>
+
+    <!-- forms -->
+    <!-- shell of container that contains and groups collections of controls  -->
+        <!-- ie - inputs, checkboxes, buttons, etc -->
+        <!-- password boxes, normal text boxes, search boxes -->
+        <!-- also how and where the data would be sent to after the form is submitted -->
+            <!-- data to a server -->
+
+    <!-- empty container, like a shipping label for package or container -->
+    <form action=""></form>
+    <!-- action attribute is WHERE the form data should be sent to -->
+    <!-- ie - action=/search/ from reddit will make url be reddit.com/search/?q="silkie" -->
+        <!-- data will be sent via http request -->
+    <!-- steps
+        1. form is filled out and when form is submitted
+        2. http request is sent to destination found in action attribute
+            2a. the destination is relative to where the user is currently at 
+                ie - going to reddit.com/search/
+            2b. Sending a request to a reddit endpoint and passing in the data 
+                ie - ?q=silkie 
+            2c. we can actually do this without the form by directly typing the data into the url
+        3. HTTP request has 2 methods: GET and POST -->
+
+    <!-- labels -->
+        <!-- are important for accessbility and for ease of use -->
+        <!-- provides text but also going to be associated with an input -->
+            <!-- helps organize too -->
+
+    <!-- input -->
+    <!-- 20+ diff types: password box, text box, checkboxes, date pickers -->
+        <!-- specified by type attribute -->
+        <!-- doesn't have closing tag -->
+        <!-- also has placeholder attribute that shows something in the box before anything is entered -->
+        <!-- common input types -->
+        <p>
+            <label for="username1">Enter a username:</label>
+            <input type="text" placeholder="username" id="username">
+        </p>
+
+        <p>
+            <label for="password1">Enter a password</label>
+            <input type="password" placeholder="password" id="password">
+        </p>
+        
+        <input type="color">
+        <input type="number" placeholder="enter a number">
+            
+        <!-- lable is for captions that is associated with an input clarified via "for" in label being the same as "id" in input -->
+        <!-- better for screen readers and accessbility -->
+        <!-- better than using span or p or a -->
+        <div>
+            <label for="ladybug">Are you a ladybug?</label>
+            <input type="checkbox" id="ladybug">
+        </div>
+        
+        <!-- you can nest input inside label, that way you don't need to have a for in label but not a common use and less easy to format -->
+        <label>
+            <input type="text">
+        </label>
+
+    <!-- buttons -->
+    <!-- Commonly found in forms, but not always -->
+    <!-- Links can also be altered by css to look like a button -->
+    <!-- text is used to label button -->
+
+    <!-- buttons outside of forms do not do anything unless programmed in js -->
+    <button>
+        This is a button!
+    </button>
+
+    <!-- if button is in a form, unless otherwise explicitly stated using type, form will be submitted when button is clicked -->
+    <form action="/tacos">
+        <button>Submit</button>
+        <!-- type="button" makes it a normal button that doesn't do anything -->
+        <!-- type="submit" makes it behave as it would inside a form -->
+        <button type="button">Do Not Submit</button>
+        <!-- acts like a submit button but very odd bc can't edit text unless using value attribute -->
+        <input type="submit" value="Submit Me!!"> 
+    </form>
+
+    <!-- name -->
+    <!-- so like previously discussed, the search/?q=something http request is sent to a server that will return back a webpage to be rendered -->
+    <!-- the q actually comes from the name attribute -->
+        <!-- usually short w/o spaces -->
+    <!-- the value of name attribute is used to refer to the input value (value attribute) when the request is sent to the server -->
+        <!-- could be query term or seach term -->
+    <!-- should be on every single input and will eventually be used by a server -->
+    <form action="user">
+        <p>
+            <!-- results in this url: file:///C:/Users/jason/Desktop/WebDev%20BootCamp/user?nickname=tom -->
+            <!-- pay attention to: user?nickname=tom -->
+            <label for="nickname">Enter a nickname: </label>
+            <input id="nickname" type="text" placeholder="Nickname" name="nickname">
+        </p>
+    </form>
+
+    <br>
+    <hr>
+    <!-- more complicated use of name for data passing -->
+    <!-- the result of the code under after submitted -->
+    <!-- file:///C:/Users/jason/Desktop/WebDev%20BootCamp/NameExample?username=Tom&password=Holland&color=%23695f91&number=69 -->
+        <!-- 
+            & after action
+            & separating pairs in the url  
+        -->
+    <form action="NameExample">
+        <p>
+            <label for="username">Enter a username: </label>
+            <input type="text" placeholder="Username" name="username" id="username">
+        </p>
+        <p>
+            <label for="password">Enter a password: </label>
+            <input type="text" placeholder="Password" name="password" id="username">
+        </p>
+        <p>
+            <label for="color">Choose a color: </label>
+            <input type="color" name="color" id="color">
+        </p>
+        <p>
+            <!-- this shows up later, but number inputs can be given a min or max  -->
+            <label for="number">Enter a number: </label>
+            <input type="number" name="number" id=" number" min="0" max="1000">
+        </p>
+        <button>Submit</button>
+    </form>
+
+    <!-- Practice form by "hijacking" google and reddit searches -->
+    <!-- REDDIT -->
+    <!-- https://www.reddit.com/search/?q=genshin but only the /search -->
+    <!-- reddit servers expect "q" and not another name -->
+    <form action="https://www.reddit.com/search">
+        <input type="text" name="q">
+        <button>Search Reddit</button>
+    </form>
+
+    <!-- GOOGLE -->
+    <!-- same idea -->
+    <!-- http://www.google.com/search/?q=genshin -->
+    <form action="http://www.google.com/search">
+        <input type="text" name="q">
+        <button>Search Google</button>
+    </form>
+
+    <!-- YOUTUBE -->
+    <!-- youtube uses results instead of search -->
+    <!-- https://www.youtube.com/results -->
+    <form action="https://www.youtube.com/results">
+        <input type="text" name="search_query">
+        <!-- even if button doesn't exist, hitting enter will submit the form -->
+        <button>Search Youtube</button>
+    </form>
+
+    <hr>
+
+    <!-- different types of checkboxes -->
+    <div>
+        <form action="/hobbies">
+            <!-- Checkbox -->
+            <!-- checkboxes can allow users to check at least 0 of the options -->
+            <!-- checked can be added to make it start being checked off -->
+            <!-- having label is not only good practive but great for mobile since the small box might be hard to click on -->
+            <!-- here name is given something a server or backend might actually use -->
+            <p>
+                <input type="checkbox" id="games" name="chose_optn" checked>
+                <label for="games">Games</label>
+            </p>
+
+            <!-- Radio -->
+            <!-- allow users to only choose only 1, no more no less -->
+            <!-- all radio buttons a "set" needs to all have the same value in the name attribute -->
+            <!-- NOTE: without "value" attribute, the server will get size="on" instead of a specific value -->
+                <!-- since name refers to all 3 of them, we will need value to differenciate btwn them -->
+            <!-- the label is supposed to match with corresponding id -->
+            <p>
+                <label for="sm">Sm:</label>
+                <input type="radio" name="size" id="sm" value="sm">
+                <label for="med">Med:</label>                
+                <input type="radio" name="size" id="med" value="med">
+                <label for="lg">Lg:</label>
+                <input type="radio" name="size" id="lg" value="lg">
+            </p>
+
+            <hr>
+
+            <!-- dropdown menu -->
+            <!-- Uses two elements: select and option -->
+            <!-- select containing the name and id of the dropdown menu -->
+            <!-- options each containing its own value (this is what shows up on the url) -->
+            <!-- not an input, is its own stand alone element -->
+            <p>
+                <label for="meal">Please Select an Entree</label>
+                <select name="meal" id="meal">
+                    <!-- This is the a way to create a placeholder where nothing will be sent; notice how the value is set to nothing -->
+                    <option value="">Please Choose an Option</option>
+                    <!-- by adding select attribute, that option will be shown everytime the page loads -->
+                    <option value="fish" selected>Fish</option>
+                    <option value="Veg">Veg</option>
+                    <option value="steak">Steak</option>
+                </select>
+            </p>
+            
+            <!-- range and text areas -->
+            <!-- Range -->
+            <!-- allows users to use a slider to select some value on a range -->
+            <!-- we can set the value of min and max using different (min and max) attributes -->
+            <p>
+                <label for="cheese">Amount of Cheese: </label>
+                <!-- step dictates the "interval" of each step or tick -->
+                <input type="range" id="cheese" min="0" max="100" step="10" name="cheese_amt">
+            </p>
+
+            <!-- Textarea -->
+            <!-- standalone element not an input -->
+            <!-- will still show up in url -->
+            <p>
+                <label for="requests">Any special requests?</label>
+                <!-- row=> longer/taller or shorter area; col=> wider or skinnier area -->
+                <textarea name="requests" id="requests" cols="30" rows="10" placeholder="Type Something Here">
+
+                </textarea>
+            </p>
+
+            <button>Submit</button>
+        </form>
+    </div>
+
+    <hr>
+
+    <!-- form validations -->
+    <!-- Refers to adding constraints to validate user input or data -->
+    <!-- ie - fields can't be empty or password requirements -->
+    <!-- client side validation is usually done with JS right on the browser-->
+    <!-- there is also server side validation that submits data to server and makes sure data meets expectations -->
+        <!-- this exists bc through the browser isn't the only way to sign in or register -->
+            <!-- ie - through terminal or api, etc -->
+        <!-- more common back then -->
+            <!-- page would refresh after data is submitted then if it fits the requirements is known -->
+
+    <!-- focusing on built in validations for now -->
+    <!-- Required attribute -->
+    <h2>Validation Demo</h2>
+    <form action="/test">
+        <p>
+            <label for="first">Enter First Name: </label>
+            <!-- this will cause an error to show when submitted empty -->
+            <input type="text" name="first" required>
+        </p>
+
+        <p>
+            <label for="username">Enter Username</label>
+            <!-- this will show error when is submitted less than 5 and will not allow user to enter more than 20 -->
+            <!-- min and max can be used to set the range as well (#s, dates, etc) -->
+            <input type="username" name="username" minlength="5" maxlength="20" required>
+        </p>
+
+        <!-- Pattern attribute -->
+        <!-- uses regular expressions for validation -->
+        <!-- to make sure that data contains or doesn't contain certain characters -->
+            <!-- ie - pattern="[0-9]{3}" -->
+        <!-- some elements have certain patterns automatically built in -->
+        <p>
+            <label for="email">Enter Email</label>
+            <!-- needs something@something.com to validate -->
+            <input type="email" name="email" required>
+
+            <label for="url">Enter URL</label>
+            <!-- needs urlscheme://restofurl to validate -->
+            <input type="url" name="url" url>
+        </p>
+
+        <button>Submit</button>
+    </form>
+</body>
+</html>

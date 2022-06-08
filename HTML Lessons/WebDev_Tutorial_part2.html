@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- HTML5 is the latest standard  -->
+    <!-- contains new versions of the HTML language w/ new elements and attributes, etc -->
+    <!-- supports tech for 3D animations, saving info on browser -->
+    <!-- so not just a new version of HTML but HTML5 is a standard that describes how HTML works -->
+        <!-- HOW HTML should work  -->
+        <!-- NOT something to be downloaded or installed  -->
+    <!-- can google HTML spec - document that details how HTML should work -->
+
+    <!-- Block vs. Inline Elements -->
+    <!-- Block element - will exist on its own line or block; takes up whole "block of space" -->
+        <!-- paragraph, heading, div, etc -->
+    <!-- Inline Element will fit in alongside other elements -->
+        <!-- img, a, etc -->
+
+    <!-- Div -->
+    <!-- short for content division element -->
+    <!-- generic container to hold things and force content together -->
+    <!-- block level element -->
+    <!-- works great with css  -->
+
+    <!-- span -->
+    <!-- generic container too  -->
+    <!-- inline element  -->
+    <!-- could be used for just a piece of text that doesn't need it's own line  -->
+    <!-- think opp of p and acts kinda like div-->
+    <!-- to single out to style or do something with later on -->
+
+    <!-- used less elements but still good to know -->
+    <!-- hr -->
+    <!-- thematic break - horizontal rule  -->
+    <!-- for shift of topic or change of scenery or change of chapter -->
+
+    <!-- br -->
+    <!-- line break element  -->
+    <!-- makes break in content -->
+    <!-- ie - in a poem with intentional line breaks -->
+
+    <!-- sup -->
+    <!-- superscript element -->
+
+    <!-- sub -->
+    <!-- subscript element -->
+    <!-- ------------------------END---------------------------------- -->
+
+    <!-- HTML entities  -->
+    <!-- for different characters that are hard to type  -->
+    <!-- starts with ampersand (&) and ends with semicolon (;) -->
+    <!-- ie - copywrite, etc -->
+    <!-- certain symbols are bad for editors  -->
+        <!-- ie - less than, ampersamp, etc  -->
+    
+    <!-- Semantic Markup -->
+    <!-- relating to meaning aka meaningful markup that relates or pertains to content of the element -->
+    <!-- fairly new  -->
+    <!-- makes code harder to differentiate and read  -->
+        <!-- main, header, section, nav, footer, article, etc -->
+    <!-- behaves just like divs but with meaning -->
+    <!-- meaning for applications or other computers -->
+        <!-- crawlers - like google does to pages -->
+        <!-- acts as signposts or hooks  -->
+        <!-- great for needing to update webpage -->
+
+    <!-- examples of semantic elements -->
+
+    <!-- nav -->
+    <!-- represents anything that provides navigation links -->
+        <!-- parts of the same page -->
+        <!-- links to completely diff resources -->
+        <!-- doesn't always have to be top of page -->
+        <!-- could be sidebar or even in footer -->
+    <nav>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="GoW.html">Garden of Words</a></li>
+        </ul>
+    </nav>
+
+     <!-- main -->
+    <!-- represents dominant content of the body of a document (page) -->
+    <!-- excludes documents that would repeat across different pages -->
+        <!-- ie - sidebars, navigations links, copyright info, site logos, search forms, etc -->       
+    <main>
+        <!-- section -->
+        <!-- section still generic, represents standalone section of application or website -->
+        <!-- still better than a div, which is a generic container for literally anything  -->
+        <section>
+            <img src="" alt="img example">
+            <h1>Title</h1>
+            <p>Some Text that will be part of a sections</p>
+        </section>
+
+        <!-- article -->
+        <!-- for a self contained composition in a document, page, application, or site -->
+        <!-- something that can be independently distrubuted or reusable (ie - widgets) -->
+        <!-- groups content together  -->
+        <!-- with single piece of content  -->
+            <!-- article element can contain the main content and set if off from rest of page -->
+        <!-- with multiple peices of content -->
+            <!-- blog index, search results -->
+            <!-- caterogy page -->
+            <!-- news feed  -->
+            <!-- multiple article elements used to contain each thing  -->
+
+        <!-- aside -->
+        <!-- not really part of the document  -->
+        <!-- not essential  -->
+        <!-- indirectly related  -->
+        <!-- sidebars, callout boxes, -->
+        <!-- notes to articles  -->
+
+        <!-- header  -->
+        <!-- contains introductory elements -->
+        <!-- navigational elements -->
+
+        <!-- footer -->
+        <!-- can have more than one footer on a page  -->
+            <!-- ie - footer in article and one more for page -->
+
+        <!-- time -->
+        <!-- inline element -->
+        <!-- wrap around piece of content that has date or time -->
+        <!-- need to specify date time attribute -->
+
+        <!-- figure -->
+        <!-- self contained element with potentially an optional caption -->
+            <!-- using the figcaption element  -->
+        <!-- figure, content, caption is all referenced as a single unit -->
+        <!-- gives special meaning -->
+            <!-- indicated that it is an image or element or diagram  -->
+
+        <!-- abbr element  -->
+        <!-- data element  -->
+
+        <!-- screen readers  -->
+        <!-- will be able to read elements easily if semantic html is used properly -->
+
+        <!-- emet helps us write html  -->
+        <!-- extension built into vscode  -->
+        <!-- helps write semantic html  -->
+        <!-- using shortened syntax to create html elements quickly -->
+        <!-- ie - ul>ul>li*5>a[href=$]{click me} -->
+        <ul>
+            <ul>
+                <li><a href="1">click me</a></li>
+                <li><a href="2">click me</a></li>
+                <li><a href="3">click me</a></li>
+                <li><a href="4">click me</a></li>
+                <li><a href="5">click me</a></li>
+            </ul>
+        </ul>
+        <!-- > parent-child syntax -->
+        <!-- + adjacent syntax -->
+        <!-- {text} text within syntax -->
+        <!-- $ - sequential number syntax -->
+        <!-- * - multiplication syntax -->
+        <!-- https://docs.emmet.io/ -->
+    </main>
+</body>
+</html>
