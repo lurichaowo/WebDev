@@ -1,3 +1,8 @@
+html{ /* <-- this is the root element */
+    /* this is for the rem example */
+    font-size: 20px;
+}
+
 section{
     background-color: #6d6875;
     width: 800px;
@@ -45,4 +50,17 @@ button{
     padding: 0 1em; /*fontsize x 1*/
     border-radius: 0.5em; /* fontsize x 0.5 */
     /* the general shape will be maintained */
+}
+
+/* bc of em, all these uls are nested and the sizing is dependent on parent */
+/* they are relative to each other so they will grow in size */
+ul{
+    font-size: 1.5em;
+}
+
+/* the solution is rem */
+/* rem is relative to the ROOT html element */
+/* so it provides a constant point of reference to avoid this issue */
+ul{
+    font-size: 1.5rem;
 }
