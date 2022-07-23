@@ -1,0 +1,53 @@
+section div{
+    border: solid 3px black;
+    background-color: darkblue;
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    margin: 10px;
+}
+
+#middle{
+    background-color: teal;
+}
+
+
+#static #middle{
+    /* this is the default position property of elements */
+    position: static;
+}
+
+#relative #middle{
+    /* keeps element in normal flow of doc and will offset itself relative to itself with top right bottom left */
+    position: relative;
+    top: 50px;
+    left: 50px;
+}
+
+#absolute{
+    position: relative;
+    /* this will make the aboslute positioned element be relative to itself rather than the body element */
+}
+
+#absolute #middle{
+    /* removes element from normal doc flow and no space is created for elemenent in page layout */
+    /* it will look like it collapsed causing the the right box to be blocked by the teal box */
+    /* position is relative to its closest positioned (anything other than static) ancestor or else it will be relative to the initial containing block ie - the body  */
+    position: absolute;
+    top: 1px;
+    left: 1px;
+}
+
+#fixed #middle{
+    /* Like absolute but ALWAYS relative to the initial containing block ie - body */
+    position: fixed;
+    top: 50px;
+    left: 50px;
+}
+
+#sticky{
+    /* is just like fixed but is relative until the window edge meets it then causing it to be fixed */
+    position: sticky;
+    top: 5px;
+    left: 5px;
+}
