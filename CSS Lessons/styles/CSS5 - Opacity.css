@@ -1,0 +1,27 @@
+section{
+    background-color: magenta;
+    width: 500px;
+    height: 500px;
+}
+
+#rgba{
+    /* a or alpha*/
+    /* is the transparency property */
+    /* 0 is completely transparent, 1 is completely solid */
+    width: 50%;
+    height: 50%;
+    /* will only affect this one property */
+    background-color: rgba(255,255,255, 0.7);
+    /* can also be used as hexadecimal */
+    /* FF = 1 so fully solid */
+    background-color: #FFFFFFFF;
+}  
+
+#opacity{
+    /* opacity goes from 0 to 1 */
+    width: 50%;
+    height: 50%;
+    background-color: yellow;
+    /* the entire element and all of its children will be affectd */
+    opacity: 0.5; 
+}
